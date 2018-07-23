@@ -14,6 +14,8 @@
 		ADFD92C02105D5F8004F74B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFD92BE2105D5F8004F74B5 /* LaunchScreen.storyboard */; };
 		ADFD92CB2105D5F9004F74B5 /* LeisureMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD92CA2105D5F9004F74B5 /* LeisureMapTests.swift */; };
 		ADFD92D62105D5F9004F74B5 /* LeisureMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD92D52105D5F9004F74B5 /* LeisureMapUITests.swift */; };
+		ADFD92E42105DB0B004F74B5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD92E32105DB0B004F74B5 /* SplashViewController.swift */; };
+		ADFD92E92105DC5E004F74B5 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD92E82105DC5E004F74B5 /* loginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		ADFD92D12105D5F9004F74B5 /* LeisureMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeisureMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFD92D52105D5F9004F74B5 /* LeisureMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeisureMapUITests.swift; sourceTree = "<group>"; };
 		ADFD92D72105D5F9004F74B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADFD92E32105DB0B004F74B5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		ADFD92E82105DC5E004F74B5 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,14 @@
 		ADFD92B42105D5ED004F74B5 /* LeisureMap */ = {
 			isa = PBXGroup;
 			children = (
+				ADFD92E72105DC3A004F74B5 /* loginFlow */,
 				ADFD92B52105D5ED004F74B5 /* AppDelegate.swift */,
 				ADFD92B72105D5ED004F74B5 /* ViewController.swift */,
 				ADFD92B92105D5ED004F74B5 /* Main.storyboard */,
 				ADFD92BC2105D5F8004F74B5 /* Assets.xcassets */,
 				ADFD92BE2105D5F8004F74B5 /* LaunchScreen.storyboard */,
 				ADFD92C12105D5F8004F74B5 /* Info.plist */,
+				ADFD92E32105DB0B004F74B5 /* SplashViewController.swift */,
 			);
 			path = LeisureMap;
 			sourceTree = "<group>";
@@ -123,6 +129,14 @@
 				ADFD92D72105D5F9004F74B5 /* Info.plist */,
 			);
 			path = LeisureMapUITests;
+			sourceTree = "<group>";
+		};
+		ADFD92E72105DC3A004F74B5 /* loginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				ADFD92E82105DC5E004F74B5 /* loginViewController.swift */,
+			);
+			path = loginFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADFD92E92105DC5E004F74B5 /* loginViewController.swift in Sources */,
+				ADFD92E42105DB0B004F74B5 /* SplashViewController.swift in Sources */,
 				ADFD92B82105D5ED004F74B5 /* ViewController.swift in Sources */,
 				ADFD92B62105D5ED004F74B5 /* AppDelegate.swift in Sources */,
 			);

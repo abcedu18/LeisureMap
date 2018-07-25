@@ -8,15 +8,35 @@
 
 import UIKit
 
-class loginViewController: UIViewController {
 
+class loginViewController: UIViewController,UITextFieldDelegate {
+
+    @IBOutlet weak var txtAccount: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
+    @IBOutlet weak var btnLogin: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//       textField.tag
+//    }
+//    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag==1{
+            textField.resignFirstResponder()
+            txtPassword.becomeFirstResponder()
+        }
+        if textField.tag==4{
+            textField.resignFirstResponder()
+        }
+        return true
+    }
     /*
     // MARK: - Navigation
 

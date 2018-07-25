@@ -14,9 +14,13 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let defaults:UserDefaults=UserDefaults.standard
+        
+        defaults.synchronize()
     }
     
-
+    
+    
     /*
     // MARK: - Navigation
 

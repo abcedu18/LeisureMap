@@ -43,7 +43,7 @@
                                     <color key="titleShadowColor" red="0.3257496399" green="1" blue="0.2919266143" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="click:" destination="A5Y-3Z-34c" eventType="touchUpInside" id="7YQ-vM-RqP"/>
+                                    <action selector="btnClick:" destination="A5Y-3Z-34c" eventType="touchUpInside" id="CRg-qP-NyU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,7 +81,7 @@
                     <view key="view" contentMode="scaleToFill" id="xxu-Qp-xwE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rQe-LF-ylB"/>
                     </view>
@@ -97,7 +97,7 @@
                     <view key="view" contentMode="scaleToFill" id="O4N-cd-n3Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="x53-Qe-Ggg"/>
                     </view>
                     <connections>
@@ -117,7 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.48155812203846216" green="1" blue="0.96503448763210908" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.7016922151086622" green="1" blue="0.450801336726251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="5GT-v0-nvv"/>
                     </view>
                 </viewController>
@@ -132,7 +132,7 @@
                     <view key="view" contentMode="scaleToFill" id="AS3-GJ-bqb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="O4s-au-scT"/>
                     </view>
                     <navigationItem key="navigationItem" id="OcF-0p-r44"/>
@@ -209,5 +209,5 @@
             <point key="canvasLocation" x="-1108" y="-236"/>
         </scene>
     </scenes>
-    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <color key="tintColor" red="0.32574963985415928" green="1" blue="0.29192661427155664" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

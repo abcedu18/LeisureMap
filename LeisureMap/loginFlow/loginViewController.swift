@@ -9,20 +9,37 @@
 import UIKit
 
 
-class loginViewController: UIViewController,UITextFieldDelegate {
+class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDelegate {
+    
+    
 
     @IBOutlet weak var txtAccount: UITextField!
+    
     @IBOutlet weak var txtPassword: UITextField!
     
     @IBOutlet weak var btnLogin: UIButton!
     
+    var requestWorker:AsyncRequestWorker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        requestWorker=AsyncRequestWorker()
+        requestWorker?.responseDelegate=self
+        
+        print("viewDidLoad")
+        
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnClick(_ sender: Any) {
+        
+        
+        let account=txtAccount.text!
+        let password=txtPassword.text!
+        
+        let from="https://score.azurewebsites.net/api/login/\( account)/\(password ))"
+        self.requestWorker?.getResponse(from: from, tag: 1)
+    }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         
@@ -46,7 +63,25 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         let newString:NSString=countString.replacingCharacters(in: range, with: string) as NSString
         
         return newString.length <= maxLength
+        
     }
+   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear")
+    }
+    
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag==1{
@@ -58,13 +93,13 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         }
         return true
     }
-    
-    @IBAction func click(_ sender: Any) {
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "moveToMasterViewSegue", sender: self)
-        }
+    func receivedResponse(_ sender: AsyncRequestWorker, responseString: String, tag: Int) {
+        print(responseString)
     }
-    
+
+//        @IBAction func btnClick(_ sender: Any) {
+//
+//    }
     /*
     // MARK: - Navigation
 
@@ -74,5 +109,5 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    }
 
-}

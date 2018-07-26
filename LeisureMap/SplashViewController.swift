@@ -12,6 +12,8 @@ class SplashViewController: UIViewController,AsyncResponseDelegate {
     
     
     
+    
+    
     var requestWorker:AsyncRequestWorker?
     var appVersion:String=""
     
@@ -50,15 +52,14 @@ class SplashViewController: UIViewController,AsyncResponseDelegate {
     //MARK:AsyncResponseDelegate
     
     func receivedResponse(_ sender: AsyncRequestWorker, responseString: String, tag: Int) {
+        
         print(responseString)
-        let defaults:UserDefaults=UserDefaults.standard
-        defaults.set(responseString, forKey: "serviceVersion")
-        defaults.synchronize()
         
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "moveToLoginViewSegue", sender: self)
         }
     }
+}
     
 
-}
+

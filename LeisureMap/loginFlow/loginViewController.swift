@@ -28,7 +28,7 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         
         let accept="abcdeABCDE"
         let cs=NSCharacterSet(charactersIn: accept).inverted
-        let filtered=string.components(separatedBy: cs).joined(separator: "")
+        let filtered=string.components(separatedBy: cs).joined(separator:"")
         
         if(string != filtered){
             return false
@@ -58,6 +58,13 @@ class loginViewController: UIViewController,UITextFieldDelegate {
         }
         return true
     }
+    
+    @IBAction func click(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "moveToMasterViewSegue", sender: self)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

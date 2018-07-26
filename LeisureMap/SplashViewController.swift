@@ -13,15 +13,16 @@ class SplashViewController: UIViewController,AsyncResponseDelegate {
     
     
     var requestWorker:AsyncRequestWorker?
-
-    @IBOutlet weak var lbVersion: UILabel!
     var appVersion:String=""
+    
+    @IBOutlet weak var lbVersion: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        appVersion="" + (Bundle.main.infoDictionary?["CFBundleShortVersionString"]as?String)!
+        appVersion="" + (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)!
         lbVersion.text=appVersion
        
         requestWorker=AsyncRequestWorker()
@@ -49,7 +50,7 @@ class SplashViewController: UIViewController,AsyncResponseDelegate {
     //MARK:AsyncResponseDelegate
     
     func receivedResponse(_ sender: AsyncRequestWorker, responseString: String, tag: Int) {
-          print(responseString)
+        print(responseString)
         let defaults:UserDefaults=UserDefaults.standard
         defaults.set(responseString, forKey: "serviceVersion")
         defaults.synchronize()

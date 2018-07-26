@@ -32,19 +32,12 @@ class AsyncRequestWorker{
 
                let responseString=String(dataString!)
 
-                print(responseString)
+               print(responseString)
                 
-                self.responseDelegate?.receivedResponse(self, responseString: responseString, tag: tag)
+               self.responseDelegate?.receivedResponse(self, responseString: responseString, tag: tag)
             }
         })
         //print("HERE")
         task.resume()
     }
-    
-   
-    
-    
-  
-    
-    
 }

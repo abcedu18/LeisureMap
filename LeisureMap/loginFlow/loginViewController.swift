@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 
 class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDelegate {
     
@@ -39,6 +39,16 @@ class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDel
         
         let from="https://score.azurewebsites.net/api/login/\( account)/\(password ))"
         self.requestWorker?.getResponse(from: from, tag: 1)
+    }
+    func readServiceCategory(){
+       let from = "https://score.azurewebsites.net/api/serviceCategory"
+       self.requestWorker?.getResponse(from: from, tag: 2)
+        print(from)
+    }
+    func readStore(){
+        let from  = "https://score.azurewebsites.net/api/store"
+        self.requestWorker?.getResponse(from: from, tag: 3)
+         print(from)
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -74,12 +84,12 @@ class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDel
         print("viewDidAppear")
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappear")
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappear")
-    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        print("viewDidDisappear")
+//    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        print("viewWillDisappear")
+//    }
     
     
     
@@ -94,12 +104,69 @@ class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDel
         return true
     }
     func receivedResponse(_ sender: AsyncRequestWorker, responseString: String, tag: Int) {
-        print(responseString)
-    }
+        print("\(tag):\(responseString)")
+        
+        switch tag {
+        case 1:
+            self.readServiceCategory()
+            break
+        case 2:
+            do{
+                if let dataFromString = responseString.data(using: .utf8, allowLossyConversion: false) {
+                    let json = try JSON(data: dataFromString)
+                    for(_,subJson):(String,JSON) in json{
+                        let index : Int = subJson["index"].intValue
+                        let name : String = subJson["name"].stringValue
+                        let imagePath: String = subJson["imagePath"].stringValue
+                        print("\(index):\(name)")
+                    }
+                }
+            }catch{
+                print(error)
+            }
+            
+            self.readStore()
+            
+            break
+        case 3:
+            
+            do{
+                if let dataFromString = responseString.data(using: .utf8, allowLossyConversion: false) {
+                    let json = try JSON(data: dataFromString)
+                    for(_,subJson):(String,JSON) in json{
+                        // {"serviceIndex":0,"name":"Cafe00","location":{"address":"","latitude":0.0,"longitude":0.0},"index":0,"imagePath":""}
+                        let serviceIndex : Int = subJson["serviceIndex"].intValue
+                        let name : String = subJson["name"].stringValue
+                        let index : Int = subJson["index"].intValue
+                        let imagePath: String = subJson["imagePath"].stringValue
+                        
+                        let location : JSON = subJson["location"]
+                        let address : String = location["address"].stringValue
+                        let latitude : Double = location["latitude"].doubleValue
+                        let longitude : Double = location["longitude"].doubleValue
+                        
+                        
+                        print("\(index):\(name):\( latitude )")
+                    }
+                }
+            }catch{
+                print(error)
+            }
+            
+            break
+        default:
+            break
+        }
+}
 
-//        @IBAction func btnClick(_ sender: Any) {
+//            DispatchQueue.main .async {
+//                self.performSegue(withIdentifier: "moveToMasterViewSegue", sender: self)
+//            }
 //
-//    }
+
+      
+
+
     /*
     // MARK: - Navigation
 

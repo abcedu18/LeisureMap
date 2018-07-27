@@ -10,7 +10,7 @@ import Foundation
 
 class ServiceCategory{
     
-    var name : String?
+    var Name : String?
     var ImagePath :String?
     var Index:Int = 0
     

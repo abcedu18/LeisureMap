@@ -13,6 +13,7 @@
 		AD228AD62109619E00ADF389 /* NetWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD228AD52109619E00ADF389 /* NetWorker.swift */; };
 		AD6CEA58210AAA9700518E23 /* ServiceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CEA57210AAA9700518E23 /* ServiceCategory.swift */; };
 		AD6CEA5A210AAB6200518E23 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CEA59210AAB6200518E23 /* Store.swift */; };
+		AD6CEA5C210AC03C00518E23 /* SQLiteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CEA5B210AC03C00518E23 /* SQLiteWorker.swift */; };
 		ADBFF1262109CF2800AD6ACE /* FileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBFF1252109CF2800AD6ACE /* FileWorker.swift */; };
 		ADD49B96210858D6008ADACB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD49B95210858D6008ADACB /* MasterViewController.swift */; };
 		ADD49B98210858EC008ADACB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD49B97210858EC008ADACB /* DetailViewController.swift */; };
@@ -55,6 +56,7 @@
 		AD228AD52109619E00ADF389 /* NetWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorker.swift; sourceTree = "<group>"; };
 		AD6CEA57210AAA9700518E23 /* ServiceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCategory.swift; sourceTree = "<group>"; };
 		AD6CEA59210AAB6200518E23 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		AD6CEA5B210AC03C00518E23 /* SQLiteWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteWorker.swift; sourceTree = "<group>"; };
 		ADBFF1252109CF2800AD6ACE /* FileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWorker.swift; sourceTree = "<group>"; };
 		ADD49B95210858D6008ADACB /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		ADD49B97210858EC008ADACB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		AD228AD42109613A00ADF389 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				AD6CEA5B210AC03C00518E23 /* SQLiteWorker.swift */,
 				AD228AD52109619E00ADF389 /* NetWorker.swift */,
 				ADBFF1252109CF2800AD6ACE /* FileWorker.swift */,
 			);
@@ -460,6 +463,7 @@
 				ADD49B96210858D6008ADACB /* MasterViewController.swift in Sources */,
 				AD6CEA5A210AAB6200518E23 /* Store.swift in Sources */,
 				ADFD92E92105DC5E004F74B5 /* loginViewController.swift in Sources */,
+				AD6CEA5C210AC03C00518E23 /* SQLiteWorker.swift in Sources */,
 				ADBFF1262109CF2800AD6ACE /* FileWorker.swift in Sources */,
 				ADFD92E42105DB0B004F74B5 /* SplashViewController.swift in Sources */,
 				ADD49B98210858EC008ADACB /* DetailViewController.swift in Sources */,

@@ -9,7 +9,9 @@
 import UIKit
 import SwiftyJSON
 
-class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDelegate {
+class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDelegate, FileWorkerDelegate {
+    
+    
     
     
 
@@ -20,11 +22,15 @@ class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDel
     @IBOutlet weak var btnLogin: UIButton!
     
     var requestWorker:AsyncRequestWorker?
+    var fileWorker:FileWorker?
+    let storeFileName="store.json"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         requestWorker=AsyncRequestWorker()
-        requestWorker?.responseDelegate=self
+        requestWorker?.responseDelegate = self
+        fileWorker=FileWorker()
+        fileWorker?.fileWorkerDelegate = self
         
         print("viewDidLoad")
         
@@ -114,12 +120,22 @@ class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDel
             do{
                 if let dataFromString = responseString.data(using: .utf8, allowLossyConversion: false) {
                     let json = try JSON(data: dataFromString)
+                    
+                    let sqliteContext = SQLiteWorker()
+                    sqliteContext.createDatabase()
+                    sqliteContext.clearAll()
+                    
                     for(_,subJson):(String,JSON) in json{
-                        let index : Int = subJson["index"].intValue
+                        //let index : Int = subJson["index"].intValue
+                        
                         let name : String = subJson["name"].stringValue
                         let imagePath: String = subJson["imagePath"].stringValue
-                        print("\(index):\(name)")
+                        
+                        sqliteContext.insertData(_name: name, _imagepath: imagePath)
+                        //print("\(index):\(name)")
                     }
+                    let categories=sqliteContext.readData()
+                    print(categories)
                 }
             }catch{
                 print(error)
@@ -130,39 +146,50 @@ class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDel
             break
         case 3:
             
-            do{
-                if let dataFromString = responseString.data(using: .utf8, allowLossyConversion: false) {
-                    let json = try JSON(data: dataFromString)
-                    for(_,subJson):(String,JSON) in json{
-                        // {"serviceIndex":0,"name":"Cafe00","location":{"address":"","latitude":0.0,"longitude":0.0},"index":0,"imagePath":""}
-                        let serviceIndex : Int = subJson["serviceIndex"].intValue
-                        let name : String = subJson["name"].stringValue
-                        let index : Int = subJson["index"].intValue
-                        let imagePath: String = subJson["imagePath"].stringValue
-                        
-                        let location : JSON = subJson["location"]
-                        let address : String = location["address"].stringValue
-                        let latitude : Double = location["latitude"].doubleValue
-                        let longitude : Double = location["longitude"].doubleValue
-                        
-                        
-                        print("\(index):\(name):\( latitude )")
-                    }
-                }
-            }catch{
-                print(error)
-            }
+//            do{
+//                if let dataFromString = responseString.data(using: .utf8, allowLossyConversion: false) {
+//                    let json = try JSON(data: dataFromString)
+//                    for(_,subJson):(String,JSON) in json{
+//                        // {"serviceIndex":0,"name":"Cafe00","location":{"address":"","latitude":0.0,"longitude":0.0},"index":0,"imagePath":""}
+//                        let serviceIndex : Int = subJson["serviceIndex"].intValue
+//                        let name : String = subJson["name"].stringValue
+//                        let index : Int = subJson["index"].intValue
+//                        let imagePath: String = subJson["imagePath"].stringValue
+//
+//                        let location : JSON = subJson["location"]
+//                        let address : String = location["address"].stringValue
+//                        let latitude : Double = location["latitude"].doubleValue
+//                        let longitude : Double = location["longitude"].doubleValue
+//
+//
+//                        print("\(index):\(name):\( latitude )")
+//                    }
+//                }
+//            }catch{
+//                print(error)
+//            }
+            self.fileWorker?.writeToFile(content:responseString , fileName: storeFileName, tag: 1)
             
             break
         default:
             break
         }
-}
+    }
 
-//            DispatchQueue.main .async {
-//                self.performSegue(withIdentifier: "moveToMasterViewSegue", sender: self)
-//            }
-//
+
+    
+    func fileWorkerWriteCompleted(_ sender: FileWorker, fileName: String, tag: Int) {
+        
+        print(fileName)
+        
+        DispatchQueue.main .async {
+            self.performSegue(withIdentifier: "moveToMasterViewSegue", sender: self)
+        }
+    }
+    
+    func fileWorkerReadCompleted(_ sender: FileWorker, content: String, tag: Int) {
+        
+    }
 
       
 

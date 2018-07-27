@@ -43,7 +43,8 @@ class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDel
         let account=txtAccount.text!
         let password=txtPassword.text!
         
-        let from="https://score.azurewebsites.net/api/login/\( account)/\(password ))"
+       let from="https://score.azurewebsites.net/api/login/\( account)/\(password ))"
+       
         self.requestWorker?.getResponse(from: from, tag: 1)
     }
     func readServiceCategory(){
@@ -146,28 +147,7 @@ class loginViewController: UIViewController,UITextFieldDelegate,AsyncResponseDel
             break
         case 3:
             
-//            do{
-//                if let dataFromString = responseString.data(using: .utf8, allowLossyConversion: false) {
-//                    let json = try JSON(data: dataFromString)
-//                    for(_,subJson):(String,JSON) in json{
-//                        // {"serviceIndex":0,"name":"Cafe00","location":{"address":"","latitude":0.0,"longitude":0.0},"index":0,"imagePath":""}
-//                        let serviceIndex : Int = subJson["serviceIndex"].intValue
-//                        let name : String = subJson["name"].stringValue
-//                        let index : Int = subJson["index"].intValue
-//                        let imagePath: String = subJson["imagePath"].stringValue
-//
-//                        let location : JSON = subJson["location"]
-//                        let address : String = location["address"].stringValue
-//                        let latitude : Double = location["latitude"].doubleValue
-//                        let longitude : Double = location["longitude"].doubleValue
-//
-//
-//                        print("\(index):\(name):\( latitude )")
-//                    }
-//                }
-//            }catch{
-//                print(error)
-//            }
+
             self.fileWorker?.writeToFile(content:responseString , fileName: storeFileName, tag: 1)
             
             break

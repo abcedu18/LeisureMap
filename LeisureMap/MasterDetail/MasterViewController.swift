@@ -11,6 +11,10 @@ import SwiftyJSON
 
 class MasterViewController: UIViewController,FileWorkerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate, UITableViewDataSource{
     
+    
+    
+    @IBOutlet weak var storeTable: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayStores.count
     }
@@ -23,6 +27,19 @@ class MasterViewController: UIViewController,FileWorkerDelegate,UICollectionView
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let store = displayStores[indexPath.row]
+        self.selectStore = store
+        
+        DispatchQueue.main .async {
+            self.performSegue(withIdentifier: "moveToDetailViewSegue", sender: self)
+        }
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
@@ -34,7 +51,20 @@ class MasterViewController: UIViewController,FileWorkerDelegate,UICollectionView
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let category=categories[indexPath.row]
+        displayStores.removeAll()
+        for store in stores{
+            let idx:Int = category.Index - 1
+            if (store.ServiceIndex==idx){
+                displayStores.append(store)
+            }
+            DispatchQueue.main .async {
+                self.storeTable.reloadData()
+            }
+        }
+    }
     var categories:[ServiceCategory]=[]
     var stores:[Store]=[]
     var displayStores:[Store]=[]
@@ -45,6 +75,8 @@ class MasterViewController: UIViewController,FileWorkerDelegate,UICollectionView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         
         let sqliteContext = SQLiteWorker()
@@ -100,15 +132,24 @@ class MasterViewController: UIViewController,FileWorkerDelegate,UICollectionView
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        switch segue.identifier {
+            
+        case "moveToDetailViewSegue":
+            let viewController = segue.destination as! DetailViewController
+            
+            viewController.selectedStore = self.selectStore
+            
+            break
+        default:
+            break
+        }
     }
-    */
+ 
     //MARK-FileWorkerDelegate
     func fileWorkerWriteCompleted(_ sender: FileWorker, fileName: String, tag: Int) {
         //print(fileName)

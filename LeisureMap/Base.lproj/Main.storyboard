@@ -159,7 +159,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlR-qz-eZm">
                                                     <rect key="frame" x="8" y="40" width="74" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.22430394476318927" green="1" blue="0.095729828221272517" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -222,7 +222,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="iOP-Ol-hZe" id="xwe-we-iOL"/>
-                                    <outlet property="delegate" destination="iOP-Ol-hZe" id="pCd-in-xRQ"/>
+                                    <outlet property="delegate" destination="iOP-Ol-hZe" id="CvF-Jb-bdH"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -243,6 +243,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="OcF-0p-r44"/>
                     <connections>
+                        <outlet property="storeTable" destination="GIU-rX-oOP" id="wWR-3z-iS7"/>
                         <segue destination="0en-cF-thb" kind="show" identifier="moveToDetailViewSegue" id="RTt-ng-VVB"/>
                     </connections>
                 </viewController>

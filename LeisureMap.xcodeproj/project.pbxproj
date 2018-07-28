@@ -11,6 +11,7 @@
 		5BA2F138AA4B9CE671D141C5 /* Pods_LeisureMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E09DCF19B715211BF6906F4 /* Pods_LeisureMapUITests.framework */; };
 		8ABCC2380491F3DD58053125 /* Pods_LeisureMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D0119EFBD6D3D016A5C733 /* Pods_LeisureMapTests.framework */; };
 		AD228AD62109619E00ADF389 /* NetWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD228AD52109619E00ADF389 /* NetWorker.swift */; };
+		AD530E3C210C69FF0052740A /* MapFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD530E3B210C69FF0052740A /* MapFlag.swift */; };
 		AD604434210B0C23009C300E /* StoreCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD604433210B0C23009C300E /* StoreCellView.swift */; };
 		AD6CEA58210AAA9700518E23 /* ServiceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CEA57210AAA9700518E23 /* ServiceCategory.swift */; };
 		AD6CEA5A210AAB6200518E23 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CEA59210AAB6200518E23 /* Store.swift */; };
@@ -21,6 +22,7 @@
 		ADD49B98210858EC008ADACB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD49B97210858EC008ADACB /* DetailViewController.swift */; };
 		ADD49B9B2108591D008ADACB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD49B9A2108591D008ADACB /* MapViewController.swift */; };
 		ADD49B9E21085936008ADACB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD49B9D21085936008ADACB /* NoteViewController.swift */; };
+		ADFAB62D210C5318007D8EFA /* abc.edu.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ADFAB62C210C5318007D8EFA /* abc.edu.gpx */; };
 		ADFD92B62105D5ED004F74B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD92B52105D5ED004F74B5 /* AppDelegate.swift */; };
 		ADFD92B82105D5ED004F74B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD92B72105D5ED004F74B5 /* ViewController.swift */; };
 		ADFD92BB2105D5ED004F74B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADFD92B92105D5ED004F74B5 /* Main.storyboard */; };
@@ -56,6 +58,7 @@
 		97ED758D27A31AF676DA82C7 /* Pods-LeisureMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeisureMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeisureMapTests/Pods-LeisureMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		A7D0119EFBD6D3D016A5C733 /* Pods_LeisureMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeisureMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD228AD52109619E00ADF389 /* NetWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorker.swift; sourceTree = "<group>"; };
+		AD530E3B210C69FF0052740A /* MapFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFlag.swift; sourceTree = "<group>"; };
 		AD604433210B0C23009C300E /* StoreCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCellView.swift; sourceTree = "<group>"; };
 		AD6CEA57210AAA9700518E23 /* ServiceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCategory.swift; sourceTree = "<group>"; };
 		AD6CEA59210AAB6200518E23 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		ADD49B97210858EC008ADACB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ADD49B9A2108591D008ADACB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ADD49B9D21085936008ADACB /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		ADFAB62C210C5318007D8EFA /* abc.edu.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = abc.edu.gpx; sourceTree = "<group>"; };
 		ADFD92B22105D5ED004F74B5 /* LeisureMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeisureMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFD92B52105D5ED004F74B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFD92B72105D5ED004F74B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		ADD49B9921085901008ADACB /* mapFlow */ = {
 			isa = PBXGroup;
 			children = (
+				AD530E3B210C69FF0052740A /* MapFlag.swift */,
 				ADD49B9A2108591D008ADACB /* MapViewController.swift */,
 			);
 			path = mapFlow;
@@ -207,6 +212,7 @@
 		ADFD92B42105D5ED004F74B5 /* LeisureMap */ = {
 			isa = PBXGroup;
 			children = (
+				ADFAB62C210C5318007D8EFA /* abc.edu.gpx */,
 				AD6CEA56210AA9EE00518E23 /* Model */,
 				AD228AD42109613A00ADF389 /* Worker */,
 				ADD49B9C21085923008ADACB /* NoteFlow */,
@@ -370,6 +376,7 @@
 			files = (
 				ADFD92C02105D5F8004F74B5 /* LaunchScreen.storyboard in Resources */,
 				ADFD92BD2105D5F8004F74B5 /* Assets.xcassets in Resources */,
+				ADFAB62D210C5318007D8EFA /* abc.edu.gpx in Resources */,
 				ADFD92BB2105D5ED004F74B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD530E3C210C69FF0052740A /* MapFlag.swift in Sources */,
 				ADD49B9E21085936008ADACB /* NoteViewController.swift in Sources */,
 				AD6CEA58210AAA9700518E23 /* ServiceCategory.swift in Sources */,
 				ADD49B96210858D6008ADACB /* MasterViewController.swift in Sources */,

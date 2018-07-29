@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cxb-0f-HvY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ikT-2R-ms6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -195,8 +195,24 @@
                     <view key="view" contentMode="scaleToFill" id="MQk-t4-p8r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjo-uH-ij4">
+                                <rect key="frame" x="16" y="166" width="343" height="30"/>
+                                <state key="normal" title="Photo">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPhotoClick:" destination="ikT-2R-ms6" eventType="touchUpInside" id="bOZ-RL-833"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.48155812203846216" green="1" blue="0.96503448763210908" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.7016922151086622" green="1" blue="0.450801336726251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="cjo-uH-ij4" firstAttribute="leading" secondItem="5GT-v0-nvv" secondAttribute="leading" constant="16" id="5jU-gJ-tsP"/>
+                            <constraint firstItem="cjo-uH-ij4" firstAttribute="top" secondItem="5GT-v0-nvv" secondAttribute="top" constant="102" id="9aT-ik-olK"/>
+                            <constraint firstItem="5GT-v0-nvv" firstAttribute="trailing" secondItem="cjo-uH-ij4" secondAttribute="trailing" constant="16" id="oeS-wV-M5R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5GT-v0-nvv"/>
                     </view>
                 </viewController>

@@ -13,6 +13,7 @@
 		AD228AD62109619E00ADF389 /* NetWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD228AD52109619E00ADF389 /* NetWorker.swift */; };
 		AD530E3C210C69FF0052740A /* MapFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD530E3B210C69FF0052740A /* MapFlag.swift */; };
 		AD604434210B0C23009C300E /* StoreCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD604433210B0C23009C300E /* StoreCellView.swift */; };
+		AD678F78210D472400570679 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD678F77210D472400570679 /* WebViewController.swift */; };
 		AD6CEA58210AAA9700518E23 /* ServiceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CEA57210AAA9700518E23 /* ServiceCategory.swift */; };
 		AD6CEA5A210AAB6200518E23 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CEA59210AAB6200518E23 /* Store.swift */; };
 		AD6CEA5C210AC03C00518E23 /* SQLiteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6CEA5B210AC03C00518E23 /* SQLiteWorker.swift */; };
@@ -60,6 +61,7 @@
 		AD228AD52109619E00ADF389 /* NetWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorker.swift; sourceTree = "<group>"; };
 		AD530E3B210C69FF0052740A /* MapFlag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFlag.swift; sourceTree = "<group>"; };
 		AD604433210B0C23009C300E /* StoreCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCellView.swift; sourceTree = "<group>"; };
+		AD678F77210D472400570679 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AD6CEA57210AAA9700518E23 /* ServiceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCategory.swift; sourceTree = "<group>"; };
 		AD6CEA59210AAB6200518E23 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		AD6CEA5B210AC03C00518E23 /* SQLiteWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteWorker.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				AD530E3B210C69FF0052740A /* MapFlag.swift */,
 				ADD49B9A2108591D008ADACB /* MapViewController.swift */,
+				AD678F77210D472400570679 /* WebViewController.swift */,
 			);
 			path = mapFlow;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				ADFD92E42105DB0B004F74B5 /* SplashViewController.swift in Sources */,
 				ADD49B98210858EC008ADACB /* DetailViewController.swift in Sources */,
 				ADFD92B82105D5ED004F74B5 /* ViewController.swift in Sources */,
+				AD678F78210D472400570679 /* WebViewController.swift in Sources */,
 				ADFD92B62105D5ED004F74B5 /* AppDelegate.swift in Sources */,
 				ADD49B9B2108591D008ADACB /* MapViewController.swift in Sources */,
 				AD6CEA5F210AFFC200518E23 /* ServiceCellView.swift in Sources */,
